@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PreGen – Precision Cancer Prognosis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7f8;       /* Soft White */
+      --brand: #217a82;    /* Deep Teal */
+      --text: #2b2b2b;     /* Charcoal */
+      --link: #405d77;     /* Slate Blue */
+      --box: #b0dacb;      /* Soft Green */
+      --cta: #4cd2c4;      /* Bright Mint */
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--box);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      height: 40px;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav-links a:hover {
+      color: var(--bg);
+    }
+    .menu-toggle {
+      display: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero-container {
+      position: relative;
+      height: 75vh;
+      overflow: hidden;
+    }
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: var(--brand);
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+    .hero-overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero-overlay p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .cta-button {
+      background: var(--box);
+      color: var(--text);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: var(--cta);
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: var(--brand);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* Science Section */
+    .science-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .science-text {
+      flex: 1;
+    }
+    .science-image {
+      flex: 1;
+    }
+    .science-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* Team */
+    .team-tabs {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .tab-button {
+      background: var(--box);
+      border: none;
+      padding: 0.7rem 1.2rem;
+      margin: 0 0.5rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .tab-button.active {
+      background: var(--brand);
+      color: white;
+    }
+    .team-panel {
+      display: none;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .team-panel.active {
+      display: flex;
+    }
+    .member-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .member-card .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+    .linkedin-icon img {
+      width: 20px;
+      margin-top: 0.5rem;
+    }
+
+    /* Partners */
+    .partners-logos {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .partners-logos img {
+      max-height: 80px;
+      filter: grayscale(100%);
+    }
+
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: 2rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+    .contact-form button {
+      background: var(--cta);
+      border: none;
+      padding: 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background: var(--cta);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      background: #e6eded;
+      color: var(--link);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--brand);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .science-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <img src="logo_no_bckg.png" alt="PreGen Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#solution">Our Solution</a></li>
+        <li><a href="#science">Our Science</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <img src="https://images.unsplash.com/photo-1581091012184-5c7f08d77a42?auto=format&fit=crop&w=1500&q=80" alt="Lab Research" class="hero-image">
+      <div class="hero-overlay">
+        <h1>Redefining Cancer Prognosis</h1>
+        <p>PreGen transforms biopsies into predictive tools to guide treatment decisions.</p>
+        <a href="#contact" class="cta-button">Partner With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Solution -->
+  <section id="solution">
+    <h2>Precision in Cancer Prognosis</h2>
+    <p>
+      Each year, over one million men are diagnosed with prostate cancer. Current tools cannot reliably predict who will experience aggressive disease and who will not.
+      PreGen leverages molecular signatures to provide clarity, guiding clinicians to deliver the right treatment at the right time.
+    </p>
+  </section>
+
+  <!-- Our Science -->
+  <section id="science" class="science-section">
+    <div class="science-text">
+      <h2>Biopsy-driven Molecular Insights</h2>
+      <p>
+        By analyzing gene expression signatures directly from routine biopsies, PreGen’s platform predicts disease evolution with unprecedented precision.
+        Starting with prostate cancer, our technology is scalable across multiple cancer types worldwide.
+      </p>
+    </div>
+    <div class="science-image">
+      <img src="https://images.unsplash.com/photo-1631815582544-5c65a4ef0a1c?auto=format&fit=crop&w=1200&q=80" alt="Cancer research">
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team">
+    <h2>The Team Behind PreGen</h2>
+    <div class="team-tabs">
+      <button class="tab-button active" onclick="showPanel('founders', this)">Founders</button>
+      <button class="tab-button" onclick="showPanel('advisors', this)">Advisors</button>
+    </div>
+
+    <!-- Founders -->
+    <div class="team-panel active" id="founders">
+      <div class="member-card">
+        <img src="5.jpeg" alt="Oliver Gibson" class="profile-pic">
+        <h3 class="member-name">Oliver Gibson</h3>
+        <span>Co-Founder & CEO</span>
+        <a href="https://linkedin.com" target="_blank" class="linkedin-icon">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="member-card">
+        <img src="1.jpeg" alt="Geraldine Gueron" class="profile-pic">
+        <h3 class="member-name">Geraldine Gueron</h3>
+        <span>Co-Founder & CSO</span>
+        <a href="https://linkedin.com" target="_blank" class="linkedin-icon">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="member-card">
+        <img src="2.jpg" alt="Federico Cayol" class="profile-pic">
+        <h3 class="member-name">Federico Cayol</h3>
+        <span>Co-Founder</span>
+        <a href="https://linkedin.com" target="_blank" class="linkedin-icon">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="member-card">
+        <img src="3.jpeg" alt="Daniel Alonso" class="profile-pic">
+        <h3 class="member-name">Daniel Alonso</h3>
+        <span>Co-Founder</span>
+        <a href="https://linkedin.com" target="_blank" class="linkedin-icon">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="member-card">
+        <img src="4.webp" alt="Juan Bizzoto" class="profile-pic">
+        <h3 class="member-name">Juan Bizzoto</h3>
+        <span>Co-Founder & CTO</span>
+        <a href="https://linkedin.com" target="_blank" class="linkedin-icon">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+
+    <!-- Advisors -->
+    <div class="team-panel" id="advisors">
+      <div class="member-card">
+        <img src="https://via.placeholder.com/200" alt="Advisor" class="profile-pic">
+        <h3 class="member-name">Dr. Jane Smith</h3>
+        <span>Scientific Advisor</span>
+        <a href="https://linkedin.com" target="_blank" class="linkedin-icon">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section id="partners">
+    <h2>Our Partners</h2>
+    <div class="partners-logos">
+      <img src="https://via.placeholder.com/150x80" alt="GridX Capital">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>We welcome partnerships, collaborations, and inquiries.</p>
+    <form action="https://formspree.io/f/mblkvzkw" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Full name" required>
+      <input type="text" name="company" placeholder="Company">
+      <input type="email" name="email" placeholder="Email" required>
+      <select name="type" required>
+        <option value="">I'm reaching out as a..</option>
+        <option value="Investor">Investor</option>
+        <option value="Partner">Partner</option>
+        <option value="Press">Press</option>
+        <option value="Clinician">Clinician</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea name="message" placeholder="Tell us what you’d like to discuss"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 PreGen. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Team tabs
+    function showPanel(panelId, element) {
+      document.querySelectorAll('.team-panel').forEach(panel => panel.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(panelId).classList.add('active');
+      element.classList.add('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PreGen</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Biotech Startup" name="keywords" />
+    <meta content="Precision Cancer Prognosis" name="description" />
+    <link rel="shortcut icon" href="logo_no_bckg.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome + Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --bg: #f5f7f8;       /* Soft White */
+        --brand: #217a82;    /* Deep Teal */
+        --text: #2b2b2b;     /* Charcoal */
+        --link: #405d77;     /* Slate Blue */
+        --box: #b0dacb;      /* Soft Green */
+        --cta: #4cd2c4;      /* Bright Mint */
+        --light-green: #e8f6f3;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .navbar-nav .nav-link {
+        color: var(--brand);
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        background: var(--brand);
+        color: white;
+      }
+
+/* Team Cards */
+.team-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.member-card {
+  background: white;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 👈 add this */
+}
+
+.member-card {
+  color: inherit; /* text stays normal */
+  text-decoration: none;
+}
+
+.member-card:hover h3,
+.member-card:hover span {
+  color: var(--brand); /* optional: emphasize on hover */
+}
+
+
+.member-card:hover { /* 👈 hover effect like Why Us cards */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+
+.member-card .profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.member-card h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.member-card span {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.linkedin-icon img {
+  width: 24px;
+  height: 24px;
+  margin-top: auto;
+}
+
+
+      .carousel-caption.top-left {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            right: auto;
+            bottom: auto;
+            text-align: left;
+            max-width: 800px; /* optional: control text width */
+            }
+        /* Why Choose Us section */
+        #solutions {
+        background: var(--light-green); /* Soft Green background */
+        padding: 4rem 2rem;
+        }
+
+        /* Cards inside Why Choose Us */
+        #solutions .solutions-item {
+        background: white;  /* Different from section background */
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect to make them interactive */
+        #solutions .solutions-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+.hero-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  width: auto;             /* 👈 let it expand naturally */
+  max-width: 1000px;       /* 👈 bigger than before */
+}
+
+@media (min-width: 992px) {
+  .hero-heading {
+    font-size: 2.5rem;
+    max-width: 1200px;     /* 👈 even wider on large screens */
+  }
+
+
+}
+
+    </style>
+  </head>
+
+  <body id="page-top">
+    
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 border-bottom">
+    <a class="navbar-brand d-flex align-items-center" href="/" >
+      <h1 class="m-0">
+        <img class="img-fluid me-3" src="logo_no_bckg.png" alt="PreGen Logo" style="height:50px;" /> 
+      </h1>
+    </a>
+    <button
+      type="button"
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto bg-white rounded pe-4 py-3 py-lg-0 text-uppercase">
+        <a class="nav-link" href="#product">Technology</a>
+        <a class="nav-link" href="#solutions">Solutions</a>
+        <a class="nav-link" href="#team">The Team</a>
+        <a class="nav-link" href="/contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Hero Carousel -->
+  <div class="container-fluid p-0">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="w-100" style="filter: grayscale(70%);" src="pregen2.png" alt="Image" />
+          <div class="carousel-caption top-left">
+            <div class="container">
+            <h4 class="hero-heading mb-3 p-2 py-3" style="color: var(--brand)">
+            There are more than 30 million cancer biopsies performed every year.
+            </h4>
+              <p class="fs-5 text-body mb-3" style="padding-left:50px ;max-width:600px !important;">
+                Most cancer patients lack access to accurate prognosis, leading to overtreatment, missed treatment, and unequal care.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <!-- Product -->
+  <div id="product" class="container-fluid py-5">
+    <div class="container-xxl py-4 text-center">
+      <h2 class="mb-3 p-2">Our Platform</h2>
+      <p class="fs-5 mb-4">
+        By analyzing gene expression signatures directly from routine biopsies, PreGen predicts disease evolution with unprecedented precision. Starting with prostate cancer, our technology is scalable across multiple cancer types worldwide.
+      </p>
+      <img class="img-fluid mb-2" src="platf copy.png" alt="Platform">
+    </div>
+  </div>
+
+  <!-- Solutions -->
+  <div id="solutions" class="container-fluid py-5">
+    <div class="container-xxl py-4 text-center">
+      <h2 class="mb-3 p-2">Why Choose Us?</h2>
+      <div class="row g-4 text-start pb-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="solutions-item rounded h-100 p-3 text-center">
+            <h5><i class="fa-solid fa-check"></i> Precision Prognosis</h5>
+            <p>Helping clinicians deliver the right treatment at the right time through biopsy-driven molecular insights.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="solutions-item rounded h-100 p-3 text-center">
+            <h5><i class="fa-solid fa-check"></i> Scalable Impact</h5>
+            <p>Technology designed to expand across multiple cancer types and global healthcare systems.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="solutions-item rounded h-100 p-3 text-center">
+            <h5><i class="fa-solid fa-check"></i> Patient-Centric</h5>
+            <p>Reducing overtreatment and undertreatment, ensuring better quality of life for patients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Team -->
+  <div id="team" class="container-fluid py-5">
+    <div class="container-xxl py-4 text-center">
+      <h2 class="mb-4">The Team</h2>
+     <div class="team-panel">
+  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
+    <img src="5.jpeg" alt="Oliver Gibson" class="profile-pic">
+    <h3 class="member-name">Oliver Gibson</h3>
+    <span>Co-Founder & CEO</span>
+    <div class="linkedin-icon">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+    </div>
+  </a>
+
+  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
+    <img src="1.jpeg" alt="Geraldine Gueron" class="profile-pic">
+    <h3 class="member-name">Geraldine Gueron</h3>
+    <span>Co-Founder & CSO</span>
+    <div class="linkedin-icon">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+    </div>
+  </a>
+
+  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
+    <img src="2.jpg" alt="Federico Cayol" class="profile-pic">
+    <h3 class="member-name">Federico Cayol</h3>
+    <span>Co-Founder</span>
+    <div class="linkedin-icon">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+    </div>
+  </a>
+
+  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
+    <img src="3.jpeg" alt="Daniel Alonso" class="profile-pic">
+    <h3 class="member-name">Daniel Alonso</h3>
+    <span>Co-Founder</span>
+    <div class="linkedin-icon">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+    </div>
+  </a>
+
+  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
+    <img src="4.webp" alt="Juan Bizzoto" class="profile-pic">
+    <h3 class="member-name">Juan Bizzoto</h3>
+    <span>Co-Founder & CTO</span>
+    <div class="linkedin-icon">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+    </div>
+  </a>
+</div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid footer pt-5">
+    <div class="container py-3 text-center">
+      <img class="d-block mx-auto mb-3" src="logo_no_bckg.png" alt="PreGen Logo" style="height:60px;">
+      <p class="footer-item m-0">&copy; 2025 PreGen, All Rights Reserved.</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
