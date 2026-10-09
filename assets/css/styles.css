@@ -467,6 +467,8 @@ section { position: relative; overflow: hidden; scroll-margin-top: 72px; }
   justify-content: center;
   text-decoration: none;
 }
+.investor-card { transition: border-color .2s ease, box-shadow .2s ease; }
+.investor-card:hover { border-color: var(--teal); box-shadow: 0 12px 30px rgba(16, 39, 42, .08); }
 .investor-card .name { font-size: 44px; font-weight: 800; letter-spacing: .02em; color: #7E8C8E; }
 .investor-card .role { position: absolute; left: 0; right: 0; bottom: 20px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
 
