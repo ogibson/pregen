@@ -1,0 +1,55 @@
+PREGEN — SITIO WEB ESTÁTICO PARA HOSTINGER
+==========================================
+
+QUÉ HAY ACÁ
+  index.html          Inicio en español
+  novedades.html      Página de novedades (español)
+  en/index.html       Inicio en inglés
+  en/news.html        Página de novedades (inglés)
+  contacto.php        Envía por mail los mensajes del formulario
+  404.html            Página para direcciones que no existen
+  assets/css/         Estilos (styles.css)
+  assets/js/          Menú móvil, pestañas y formulario (main.js)
+  assets/img/         Imágenes
+  .htaccess           Configuración del servidor (archivo oculto)
+  robots.txt, sitemap.xml, favicon.ico
+
+
+CÓMO SUBIRLO (hPanel de Hostinger)
+  1. Backup de WordPress: hPanel → Archivos → Copias de seguridad.
+     Descargá los archivos de public_html y la base de datos.
+  2. Administrador de archivos → public_html. Mové todo lo de WordPress a
+     una carpeta de respaldo fuera de public_html (o borralo después del
+     backup). Si existe la carpeta ".well-known", dejala.
+  3. Subí el .zip a public_html y usá "Extraer". index.html tiene que
+     quedar directamente dentro de public_html, no en una subcarpeta.
+  4. Seguridad → SSL → activá "Forzar HTTPS".
+  5. No toques los registros DNS ni MX: el mail sigue funcionando igual.
+
+
+FORMULARIO DE CONTACTO
+  - Los mensajes llegan a oliver@pregen.tech.
+  - Abrí contacto.php y revisá las dos líneas de arriba:
+        $TO   = quién recibe los mensajes
+        $FROM = remitente; tiene que ser una casilla de @pregen.tech
+  - Si web@pregen.tech no existe, creala (Hostinger → Emails) o cambiá
+    $FROM por una casilla que ya exista, por ejemplo oliver@pregen.tech.
+  - Mandá un mensaje de prueba desde el sitio. Si no llega (ni a spam),
+    lo más probable es que el mail del dominio esté en otro proveedor y
+    haya que sumar a Hostinger en el registro SPF. En ese caso avisame.
+
+
+CÓMO EDITAR
+  - Textos: abrí el .html con cualquier editor (incluso el de Hostinger).
+    Cada sección tiene un comentario, por ejemplo <!-- 5 · PRODUCTO -->.
+    Cambiá el español en index.html y el inglés en en/index.html.
+  - Novedades: cada noticia está en dos lugares por idioma:
+    la sección Novedades del inicio y la página novedades.html / news.html.
+    Para agregar una, copiá un bloque <a class="card-link" ...> ... </a>
+    (o <a class="mini" ...> en el inicio) y cambiá link, fecha, título e imagen.
+  - Imágenes: guardalas en assets/img/ (ideal .webp de menos de 300 KB)
+    y usá el mismo nombre de archivo para reemplazar una existente.
+  - Colores y tamaños: assets/css/styles.css (los colores de marca están
+    arriba de todo, en :root).
+  - Después del 20/10/2026, sacá la etiqueta "Próximo" del Deep Tech
+    Summit: buscá "badge--soon" en los 4 archivos .html y borrá ese <span>.

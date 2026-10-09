@@ -1,326 +1,386 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>PreGen</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Biotech Startup" name="keywords" />
-    <meta content="Precision Cancer Prognosis" name="description" />
-    <link rel="shortcut icon" href="logo_no_bckg.png">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome + Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-
-    <style>
-      :root {
-        --bg: #f5f7f8;       /* Soft White */
-        --brand: #217a82;    /* Deep Teal */
-        --text: #2b2b2b;     /* Charcoal */
-        --link: #405d77;     /* Slate Blue */
-        --box: #b0dacb;      /* Soft Green */
-        --cta: #4cd2c4;      /* Bright Mint */
-        --light-green: #e8f6f3;
-      }
-
-      body {
-        font-family: 'Poppins', sans-serif;
-        background: var(--bg);
-        color: var(--text);
-      }
-
-      .navbar-nav .nav-link {
-        color: var(--brand);
-        font-weight: 600;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-      }
-      .navbar-nav .nav-link:hover {
-        background: var(--brand);
-        color: white;
-      }
-
-/* Team Cards */
-.team-panel {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.member-card {
-  background: white;
-  padding: 1.5rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  width: 220px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 👈 add this */
-}
-
-.member-card {
-  color: inherit; /* text stays normal */
-  text-decoration: none;
-}
-
-.member-card:hover h3,
-.member-card:hover span {
-  color: var(--brand); /* optional: emphasize on hover */
-}
-
-
-.member-card:hover { /* 👈 hover effect like Why Us cards */
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-
-.member-card .profile-pic {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  object-fit: cover;
-  object-position: center;
-}
-
-.member-card h3 {
-  margin: 0.5rem 0 0.2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.member-card span {
-  display: block;
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.8rem;
-}
-
-.linkedin-icon img {
-  width: 24px;
-  height: 24px;
-  margin-top: auto;
-}
-
-
-      .carousel-caption.top-left {
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            right: auto;
-            bottom: auto;
-            text-align: left;
-            max-width: 800px; /* optional: control text width */
-            }
-        /* Why Choose Us section */
-        #solutions {
-        background: var(--light-green); /* Soft Green background */
-        padding: 4rem 2rem;
-        }
-
-        /* Cards inside Why Choose Us */
-        #solutions .solutions-item {
-        background: white;  /* Different from section background */
-        border-radius: 8px;
-        padding: 2rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Hover effect to make them interactive */
-        #solutions .solutions-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-.hero-heading {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.3;
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  width: auto;             /* 👈 let it expand naturally */
-  max-width: 1000px;       /* 👈 bigger than before */
-}
-
-@media (min-width: 992px) {
-  .hero-heading {
-    font-size: 2.5rem;
-    max-width: 1200px;     /* 👈 even wider on large screens */
-  }
-
-
-}
-
-    </style>
-  </head>
-
-  <body id="page-top">
-    
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 border-bottom">
-    <a class="navbar-brand d-flex align-items-center" href="/" >
-      <h1 class="m-0">
-        <img class="img-fluid me-3" src="logo_no_bckg.png" alt="PreGen Logo" style="height:50px;" /> 
-      </h1>
-    </a>
-    <button
-      type="button"
-      class="navbar-toggler"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarCollapse"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto bg-white rounded pe-4 py-3 py-lg-0 text-uppercase">
-        <a class="nav-link" href="#product">Technology</a>
-        <a class="nav-link" href="#solutions">Solutions</a>
-        <a class="nav-link" href="#team">The Team</a>
-        <a class="nav-link" href="/contact">Contact</a>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PreGen — IA y genómica para un pronóstico del cáncer accesible</title>
+<meta name="description" content="PreGen desarrolla tests genómicos con inteligencia artificial que predicen la agresividad del cáncer desde la biopsia, medibles con PCR estándar en laboratorios locales.">
+<link rel="canonical" href="https://pregen.tech/">
+<link rel="alternate" hreflang="es" href="https://pregen.tech/">
+<link rel="alternate" hreflang="en" href="https://pregen.tech/en/">
+<link rel="alternate" hreflang="x-default" href="https://pregen.tech/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PreGen">
+<meta property="og:title" content="PreGen — IA y genómica para un pronóstico del cáncer accesible">
+<meta property="og:description" content="PreGen desarrolla tests genómicos con inteligencia artificial que predicen la agresividad del cáncer desde la biopsia, medibles con PCR estándar en laboratorios locales.">
+<meta property="og:url" content="https://pregen.tech/">
+<meta property="og:image" content="https://pregen.tech/assets/img/og-pregen.jpg">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#040C0E">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "PreGen", "legalName": "PreGen S.A.", "url": "https://pregen.tech/", "logo": "https://pregen.tech/assets/img/logo-teal.png", "email": "oliver@pregen.tech", "address": {"@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR"}, "sameAs": ["https://www.linkedin.com/company/pregenbio/", "https://www.instagram.com/pregen.bio/"]}</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><img src="assets/img/logo-blanco.png" alt="PreGen — Predictive Genomic Intelligence" width="164" height="40"></a>
+    <nav class="main-nav" id="menu" aria-label="Principal">
+      <div class="links"><a href="#que-hacemos">Qué hacemos</a><a href="#por-que">Por qué PreGen</a><a href="#producto">Producto</a><a href="#novedades">Novedades</a><a href="#equipo">Nosotros</a></div>
+      <a class="btn" href="#contacto">Contacto</a>
+      <div class="lang"><strong>ES</strong><span class="sep"> | </span><a href="en/index.html" hreflang="en" lang="en">EN</a></div>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><span class="sr-only">Abrir menú</span></button>
+  </div>
+</header>
+<main id="main">
+  <!-- 1 · PORTADA -->
+  <section class="hero" id="inicio">
+    <img class="hero-img" src="assets/img/hero-adn.webp" alt="Doble hélice de ADN" width="1600" height="1280" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div class="net net--white" aria-hidden="true"></div>
+    <div class="wrap hero-content">
+      <h1>IA y genómica para un pronóstico del cáncer <span class="accent-l">accesible</span></h1>
+      <div class="hero-bar"></div>
+    </div>
+    <div class="hero-foot"><div class="wrap">PREDICTIVE GENOMIC INTELLIGENCE</div></div>
+  </section>
+  <!-- 2 · QUÉ HACEMOS -->
+  <section class="what" id="que-hacemos">
+    <div class="net" aria-hidden="true"></div>
+    <div class="wrap what-grid">
+      <div class="what-text">
+        <span class="tag tag--line">Qué hacemos</span>
+        <p class="lead-xl">En PreGen usamos inteligencia artificial para encontrar biomarcadores que predicen <strong>la agresividad del tumor y la respuesta al tratamiento</strong>.</p>
+      </div>
+      <div class="what-media">
+        <div class="what-visual">
+          <div class="ring"></div>
+          <img class="circle" src="assets/img/biopsia-microscopio.webp" alt="Tejido de biopsia al microscopio (imagen ilustrativa)" width="1100" height="620" loading="lazy" decoding="async">
+        </div>
+        <div class="what-card">
+          <div class="head"><div class="icon-soft"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#227B83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v5a4 4 0 0 0 8 0V3"></path><path d="M9 12v3a5 5 0 0 0 10 0v-2.5"></path><circle cx="19" cy="10.5" r="2"></circle></svg></div><h3>¿Por qué importa el pronóstico?</h3></div>
+          <p>Cuando se diagnostica un cáncer, es fundamental determinar la biología del tumor para encontrar el tratamiento adecuado para cada paciente. De esa respuesta depende elegir entre vigilancia activa o tratamientos con efectos secundarios importantes.</p>
+        </div>
       </div>
     </div>
-  </nav>
-  <!-- Navbar End -->
-
-  <!-- Hero Carousel -->
-  <div class="container-fluid p-0">
-    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="w-100" style="filter: grayscale(70%);" src="pregen2.png" alt="Image" />
-          <div class="carousel-caption top-left">
-            <div class="container">
-            <h4 class="hero-heading mb-3 p-2 py-3" style="color: var(--brand)">
-            There are more than 30 million cancer biopsies performed every year.
-            </h4>
-              <p class="fs-5 text-body mb-3" style="padding-left:50px ;max-width:600px !important;">
-                Most cancer patients lack access to accurate prognosis, leading to overtreatment, missed treatment, and unequal care.
-              </p>
+  </section>
+  <!-- 3 · ¿POR QUÉ PREGEN? -->
+  <section class="why" id="por-que">
+    <img class="why-bg" src="assets/img/por-que.webp" alt="Abuelo con su nieto al aire libre" width="1600" height="1067" loading="lazy" decoding="async">
+    <div class="why-shade"></div>
+    <div class="net net--white" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="why-text">
+        <span class="tag tag--light">¿Por qué PreGen?</span>
+        <p class="why-lead">Los tests genómicos que hoy guían estas decisiones cuestan miles de dólares y se procesan en laboratorios centralizados. PreGen desarrolla firmas de genes medibles <strong>con PCR estándar, en laboratorios locales</strong>, para que el pronóstico de precisión sea <strong>más rápido</strong> y <strong>accesible</strong>.</p>
+      </div>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="icon-solid"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 14"></polyline></svg></div>
+          <h3>Reduce el tiempo al resultado</h3>
+          <p>Se procesa en laboratorios locales, sin envíos al exterior.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-solid"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h8.5L21 12.5 12.5 21 3 11.5z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg></div>
+          <h3>Reduce costos</h3>
+          <p>Usa equipos de PCR que ya están en los laboratorios de la región.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-solid"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></div>
+          <h3>La muestra no sale del país</h3>
+          <p>El tejido se analiza en el país donde se tomó la biopsia.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-solid"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v5a4 4 0 0 0 8 0V3"></path><path d="M9 12v3a5 5 0 0 0 10 0v-2.5"></path><circle cx="19" cy="10.5" r="2"></circle></svg></div>
+          <h3>Mejores decisiones clínicas</h3>
+          <p>Ayuda a elegir entre vigilancia activa y tratamiento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 4 · CÓMO FUNCIONA -->
+  <section class="how" id="como-funciona">
+    <div class="net" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag tag--line">Cómo funciona</span>
+        <h2 class="h2">De la biopsia a la decisión clínica</h2>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <div class="step-visual"><img src="assets/img/paso-1-biopsia.webp" alt="Tejido de biopsia (imagen ilustrativa)" width="700" height="393" loading="lazy" decoding="async"></div>
+          <div class="step-body">
+            <div class="step-num">1</div>
+            <h3>Biopsia</h3>
+            <p>Se usa el tejido de la biopsia con la que se diagnosticó el cáncer.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-visual"><img src="assets/img/paso-2-pcr.webp" alt="Tubos de RT-qPCR en el laboratorio" width="700" height="969" loading="lazy" decoding="async" style="object-position: 50% 62%"></div>
+          <div class="step-body">
+            <div class="step-num">2</div>
+            <h3>RT-qPCR</h3>
+            <p>Un laboratorio local mide la expresión de la firma.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-visual"><svg role="img" aria-label="Red neuronal que analiza la expresión génica" width="236" height="180" viewBox="0 0 236 180" preserveAspectRatio="xMidYMid slice" style="background: linear-gradient(rgba(4, 12, 14, 0.35), rgba(4, 12, 14, 0.35)), url(assets/img/particulas.webp) 62% 50% / cover"><line x1="47" y1="36" x2="94" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.21"></line><line x1="47" y1="36" x2="94" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.16"></line><line x1="47" y1="36" x2="94" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.27"></line><line x1="47" y1="36" x2="94" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.18"></line><line x1="47" y1="36" x2="94" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.15"></line><line x1="47" y1="36" x2="94" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.27"></line><line x1="47" y1="72" x2="94" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.47"></line><line x1="47" y1="72" x2="94" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.42"></line><line x1="47" y1="72" x2="94" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.41"></line><line x1="47" y1="72" x2="94" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.20"></line><line x1="47" y1="72" x2="94" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.32"></line><line x1="47" y1="72" x2="94" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.23"></line><line x1="47" y1="108" x2="94" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.19"></line><line x1="47" y1="108" x2="94" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.16"></line><line x1="47" y1="108" x2="94" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.20"></line><line x1="47" y1="108" x2="94" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.47"></line><line x1="47" y1="108" x2="94" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.43"></line><line x1="47" y1="108" x2="94" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.43"></line><line x1="47" y1="144" x2="94" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.42"></line><line x1="47" y1="144" x2="94" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.19"></line><line x1="47" y1="144" x2="94" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.24"></line><line x1="47" y1="144" x2="94" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.36"></line><line x1="47" y1="144" x2="94" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.40"></line><line x1="47" y1="144" x2="94" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.44"></line><line x1="94" y1="26" x2="142" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.45"></line><line x1="94" y1="26" x2="142" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.15"></line><line x1="94" y1="26" x2="142" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.35"></line><line x1="94" y1="26" x2="142" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.38"></line><line x1="94" y1="26" x2="142" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.31"></line><line x1="94" y1="26" x2="142" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.19"></line><line x1="94" y1="51" x2="142" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.30"></line><line x1="94" y1="51" x2="142" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.15"></line><line x1="94" y1="51" x2="142" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.48"></line><line x1="94" y1="51" x2="142" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.45"></line><line x1="94" y1="51" x2="142" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.33"></line><line x1="94" y1="51" x2="142" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.23"></line><line x1="94" y1="77" x2="142" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.47"></line><line x1="94" y1="77" x2="142" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.34"></line><line x1="94" y1="77" x2="142" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.46"></line><line x1="94" y1="77" x2="142" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.44"></line><line x1="94" y1="77" x2="142" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.31"></line><line x1="94" y1="77" x2="142" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.28"></line><line x1="94" y1="103" x2="142" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.35"></line><line x1="94" y1="103" x2="142" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.28"></line><line x1="94" y1="103" x2="142" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.18"></line><line x1="94" y1="103" x2="142" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.24"></line><line x1="94" y1="103" x2="142" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.43"></line><line x1="94" y1="103" x2="142" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.14"></line><line x1="94" y1="129" x2="142" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.14"></line><line x1="94" y1="129" x2="142" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.36"></line><line x1="94" y1="129" x2="142" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.23"></line><line x1="94" y1="129" x2="142" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.32"></line><line x1="94" y1="129" x2="142" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.30"></line><line x1="94" y1="129" x2="142" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.25"></line><line x1="94" y1="154" x2="142" y2="26" stroke="#5FD8D2" stroke-width=".8" opacity="0.50"></line><line x1="94" y1="154" x2="142" y2="51" stroke="#5FD8D2" stroke-width=".8" opacity="0.19"></line><line x1="94" y1="154" x2="142" y2="77" stroke="#5FD8D2" stroke-width=".8" opacity="0.28"></line><line x1="94" y1="154" x2="142" y2="103" stroke="#5FD8D2" stroke-width=".8" opacity="0.20"></line><line x1="94" y1="154" x2="142" y2="129" stroke="#5FD8D2" stroke-width=".8" opacity="0.36"></line><line x1="94" y1="154" x2="142" y2="154" stroke="#5FD8D2" stroke-width=".8" opacity="0.22"></line><line x1="142" y1="26" x2="189" y2="45" stroke="#5FD8D2" stroke-width=".8" opacity="0.26"></line><line x1="142" y1="26" x2="189" y2="90" stroke="#5FD8D2" stroke-width=".8" opacity="0.40"></line><line x1="142" y1="26" x2="189" y2="135" stroke="#5FD8D2" stroke-width=".8" opacity="0.24"></line><line x1="142" y1="51" x2="189" y2="45" stroke="#5FD8D2" stroke-width=".8" opacity="0.33"></line><line x1="142" y1="51" x2="189" y2="90" stroke="#5FD8D2" stroke-width=".8" opacity="0.46"></line><line x1="142" y1="51" x2="189" y2="135" stroke="#5FD8D2" stroke-width=".8" opacity="0.16"></line><line x1="142" y1="77" x2="189" y2="45" stroke="#5FD8D2" stroke-width=".8" opacity="0.14"></line><line x1="142" y1="77" x2="189" y2="90" stroke="#5FD8D2" stroke-width=".8" opacity="0.21"></line><line x1="142" y1="77" x2="189" y2="135" stroke="#5FD8D2" stroke-width=".8" opacity="0.41"></line><line x1="142" y1="103" x2="189" y2="45" stroke="#5FD8D2" stroke-width=".8" opacity="0.35"></line><line x1="142" y1="103" x2="189" y2="90" stroke="#5FD8D2" stroke-width=".8" opacity="0.21"></line><line x1="142" y1="103" x2="189" y2="135" stroke="#5FD8D2" stroke-width=".8" opacity="0.25"></line><line x1="142" y1="129" x2="189" y2="45" stroke="#5FD8D2" stroke-width=".8" opacity="0.19"></line><line x1="142" y1="129" x2="189" y2="90" stroke="#5FD8D2" stroke-width=".8" opacity="0.29"></line><line x1="142" y1="129" x2="189" y2="135" stroke="#5FD8D2" stroke-width=".8" opacity="0.14"></line><line x1="142" y1="154" x2="189" y2="45" stroke="#5FD8D2" stroke-width=".8" opacity="0.38"></line><line x1="142" y1="154" x2="189" y2="90" stroke="#5FD8D2" stroke-width=".8" opacity="0.46"></line><line x1="142" y1="154" x2="189" y2="135" stroke="#5FD8D2" stroke-width=".8" opacity="0.48"></line><circle cx="47" cy="36" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="47" cy="72" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="47" cy="108" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="47" cy="144" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="94" cy="26" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="94" cy="51" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="94" cy="77" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="94" cy="103" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="94" cy="129" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="94" cy="154" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="142" cy="26" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="142" cy="51" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="142" cy="77" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="142" cy="103" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="142" cy="129" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="142" cy="154" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="189" cy="45" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="189" cy="90" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle><circle cx="189" cy="135" r="5" fill="#040C0E" stroke="#5FD8D2" stroke-width="1.5"></circle></svg></div>
+          <div class="step-body">
+            <div class="step-num">3</div>
+            <h3>Análisis con IA</h3>
+            <p>Nuestro modelo convierte la expresión génica en un score de riesgo.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-visual"><div class="report" role="img" aria-label="Riesgo bajo, intermedio o alto, en un informe claro para el médico.">
+              <div class="report-title">INFORME</div>
+              <div class="report-bars"><i class="l" style="height: 42%"></i><i style="height: 70%"></i><i style="height: 35%"></i><i class="l" style="height: 58%"></i><i style="height: 80%"></i><i style="height: 46%"></i><i class="l" style="height: 62%"></i><i style="height: 30%"></i><i style="height: 74%"></i><i class="l" style="height: 52%"></i></div>
+              <div class="report-scale"><i style="background: #7FD0CB"></i><i style="background: #227B83"></i><i style="background: #040C0E"></i></div>
+              <div class="report-labels"><span>Bajo</span><span>Intermedio</span><span>Alto</span></div>
+            </div></div>
+          <div class="step-body">
+            <div class="step-num">4</div>
+            <h3>Resultado</h3>
+            <p>Riesgo bajo, intermedio o alto, en un informe claro para el médico.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-visual"><img src="assets/img/paso-5-decision.webp" alt="Médica conversando con un paciente" width="800" height="450" loading="lazy" decoding="async" style="object-position: 55% 40%"></div>
+          <div class="step-body">
+            <div class="step-num">5</div>
+            <h3>Decisión clínica</h3>
+            <p>Vigilancia activa o tratamiento.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- 5 · PRODUCTO -->
+  <section class="product" id="producto">
+    <div class="net net-a" aria-hidden="true"></div>
+    <div class="net net-b" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="product-card">
+        <div class="product-media"><img src="assets/img/producto-pcr.webp" alt="Pipeteo de muestras para RT-qPCR" width="1200" height="753" loading="lazy" decoding="async"></div>
+        <div class="product-body">
+          <span class="tag">Nuestro producto</span>
+          <h2 class="h2">PreGen Próstata</h2>
+          <p><strong>PreGen Próstata</strong> es un test de pronóstico que mide una <strong>firma de 10 genes</strong> por RT-qPCR sobre la biopsia diagnóstica para estimar el <strong>riesgo de progresión</strong> del tumor.</p>
+          <span class="pill-mint">En validación clínica · Argentina</span>
+          <div class="stats"><div class="stat"><strong>+1,4 millones</strong><span>de hombres reciben un diagnóstico de cáncer de próstata cada año en el mundo.</span></div><div class="stat"><strong>500.000</strong><span>biopsias de próstata por año en Latinoamérica.</span></div><div class="stat"><strong>USD 3.400+</strong><span>cuesta hoy un test genómico, y puede tardar meses.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 6 · PLATAFORMA -->
+  <section class="platform" id="plataforma">
+    <img class="platform-bg" src="assets/img/particulas.webp" alt="" width="1920" height="1440" loading="lazy" decoding="async">
+    <div class="platform-shade"></div>
+    <div class="wrap platform-grid">
+      <div class="platform-text">
+        <span class="tag tag--light">Plataforma</span>
+        <h2>Una plataforma, varios tumores</h2>
+        <p>La misma plataforma de <strong>IA</strong> se está aplicando a <strong>otros tumores y biomarcadores</strong>.</p>
+      </div>
+      <div class="pipeline">
+        <div class="pipe-labels" aria-hidden="true"><span>EXPLORACIÓN</span><span>DESARROLLO</span><span>VALIDACIÓN</span></div>
+          <div class="pipe">
+            <div class="pipe-top">
+              <div><div class="pipe-name">Próstata</div><div class="pipe-sub">Pronóstico de agresividad</div></div>
+              <div class="pipe-status s3">Validación clínica</div>
             </div>
+            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+          </div>
+          <div class="pipe">
+            <div class="pipe-top">
+              <div><div class="pipe-name">Pulmón</div><div class="pipe-sub">Respuesta a inmunoterapia</div></div>
+              <div class="pipe-status s2">Desarrollo computacional</div>
+            </div>
+            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></div>
+          </div>
+          <div class="pipe">
+            <div class="pipe-top">
+              <div><div class="pipe-name">Melanoma</div><div class="pipe-sub">Respuesta a inmunoterapia</div></div>
+              <div class="pipe-status s1">Exploratorio</div>
+            </div>
+            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- 7 · NOVEDADES -->
+  <section class="news" id="novedades">
+    <div class="net" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="news-head">
+        <span class="tag tag--line">Novedades</span>
+        <div class="news-bar">
+          <h2 class="h2">Lo último de PreGen</h2>
+          <div class="news-tools">
+            <div class="tabs" role="tablist" aria-label="Novedades">
+              <button class="tab" role="tab" id="tab-press" aria-selected="true" aria-controls="panel-press">Prensa</button>
+              <button class="tab" role="tab" id="tab-awards" aria-selected="false" aria-controls="panel-awards" tabindex="-1">Premios científicos</button>
+            </div>
+            <a class="see-all" href="novedades.html">Ver todas →</a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-
-  
-  <!-- Product -->
-  <div id="product" class="container-fluid py-5">
-    <div class="container-xxl py-4 text-center">
-      <h2 class="mb-3 p-2">Our Platform</h2>
-      <p class="fs-5 mb-4">
-        By analyzing gene expression signatures directly from routine biopsies, PreGen predicts disease evolution with unprecedented precision. Starting with prostate cancer, our technology is scalable across multiple cancer types worldwide.
-      </p>
-      <img class="img-fluid mb-2" src="platf copy.png" alt="Platform">
-    </div>
-  </div>
-
-  <!-- Solutions -->
-  <div id="solutions" class="container-fluid py-5">
-    <div class="container-xxl py-4 text-center">
-      <h2 class="mb-3 p-2">Why Choose Us?</h2>
-      <div class="row g-4 text-start pb-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="solutions-item rounded h-100 p-3 text-center">
-            <h5><i class="fa-solid fa-check"></i> Precision Prognosis</h5>
-            <p>Helping clinicians deliver the right treatment at the right time through biopsy-driven molecular insights.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="solutions-item rounded h-100 p-3 text-center">
-            <h5><i class="fa-solid fa-check"></i> Scalable Impact</h5>
-            <p>Technology designed to expand across multiple cancer types and global healthcare systems.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="solutions-item rounded h-100 p-3 text-center">
-            <h5><i class="fa-solid fa-check"></i> Patient-Centric</h5>
-            <p>Reducing overtreatment and undertreatment, ensuring better quality of life for patients.</p>
+      <div id="panel-press" role="tabpanel" aria-labelledby="tab-press">
+        <div class="news-grid">
+          <a class="feat" href="https://www.linkedin.com/posts/the-startups-from-our-latest-batch-took-part-ugcPost-7463689055738781697-ceSg/" target="_blank" rel="noopener">
+            <img src="assets/img/novedades/engine.webp" alt="Pitch en The Engine (MIT) durante el roadshow de GRIDX por Estados Unidos" width="800" height="522" loading="lazy" decoding="async">
+            <div class="feat-body">
+              <div class="feat-meta"><span class="badge">Destacado</span><span>Abril 2026</span></div>
+              <p class="feat-title">Pitch en The Engine (MIT) durante el roadshow de GRIDX por Estados Unidos</p>
+              <p class="feat-sub">Boston y San Francisco: Harvard Business School, Ginkgo Bioworks y MBC BioLabs.</p>
+              <span class="more">Ver publicación <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+            </div>
+          </a>
+          <div class="news-side">
+          <a class="mini" href="https://www.instagram.com/bacienciaytecno/p/DeRzsCsEXpR/" target="_blank" rel="noopener">
+            <img src="assets/img/novedades/deeptech.webp" alt="PreGen, entre las startups invitadas al Investment Lab del Deep Tech Summit 2026" width="773" height="600" loading="lazy" decoding="async" style="object-position: 50% 0%">
+            <div><div class="mini-meta"><span class="badge badge--soon">Próximo</span><span>20 de octubre de 2026</span></div><p class="mini-title">PreGen, entre las startups invitadas al Investment Lab del Deep Tech Summit 2026</p></div>
+          </a>
+          <a class="mini" href="https://www.instagram.com/parquedeinnovacion.ba/reel/DdcGp3OIrIG/" target="_blank" rel="noopener">
+            <img src="assets/img/novedades/amcham.webp" alt="Pitch de PreGen en la jornada HealthTech de AmCham en el Parque de la Innovación" width="630" height="340" loading="lazy" decoding="async" style="object-position: 50% 40%">
+            <div><div class="mini-meta"><span>Septiembre 2026</span></div><p class="mini-title">Pitch de PreGen en la jornada HealthTech de AmCham en el Parque de la Innovación</p></div>
+          </a>
+          <a class="mini" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7501694001616498688/" target="_blank" rel="noopener">
+            <img src="assets/img/novedades/rosario.webp" alt="Pitch en la Biotech &amp; Agrifood Afternoon de Rosario, junto a GRIDX, Michroma y We are Palta" width="952" height="714" loading="lazy" decoding="async" style="object-position: 50% 42%">
+            <div><div class="mini-meta"><span>Septiembre 2026</span></div><p class="mini-title">Pitch en la Biotech &amp; Agrifood Afternoon de Rosario, junto a GRIDX, Michroma y We are Palta</p></div>
+          </a>
+          <a class="mini" href="https://www.linkedin.com/posts/gabrielpuppo_esta-semana-organizamos-desde-aws-un-desayuno-ugcPost-7461150264264372224-NjUx/" target="_blank" rel="noopener">
+            <img src="assets/img/novedades/embajada.webp" alt="Encuentro con el Embajador de EE.UU., Peter Lamelas, y founders argentinos en el Palacio Bosch" width="800" height="665" loading="lazy" decoding="async" style="object-position: 50% 62%">
+            <div><div class="mini-meta"><span>Mayo 2026</span></div><p class="mini-title">Encuentro con el Embajador de EE.UU., Peter Lamelas, y founders argentinos en el Palacio Bosch</p></div>
+          </a>
           </div>
         </div>
       </div>
+      <div id="panel-awards" role="tabpanel" aria-labelledby="tab-awards" hidden>
+        <div class="awards">
+      <a class="card-link" href="https://www.conicet.gov.ar/se-entrego-el-premio-merck-conicet-de-innovacion-en-ciencias-de-la-salud-2/" target="_blank" rel="noopener">
+        <div class="tile" aria-hidden="true"><div class="net"></div><div class="tile-fade"></div><div class="tile-text"><small>PREMIO</small><strong>Merck · CONICET</strong></div></div>
+        <div class="card-meta"><span>Octubre 2024</span></div>
+        <h3 class="card-title">Finalistas del Premio Merck-CONICET de Innovación en Ciencias de la Salud 2024</h3>
+        <p class="card-sub">Por el desarrollo de un kit diagnóstico económico para el cáncer de próstata, con firmas génicas y machine learning.</p>
+        <div class="card-via"><span>CONICET</span><b>Ver anuncio →</b></div>
+      </a>
+        </div>
+      </div>
     </div>
+  </section>
+  <!-- 8 · EQUIPO -->
+  <section class="team" id="equipo">
+    <div class="net" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag tag--line">Equipo</span>
+        <h2 class="h2">Quiénes somos</h2>
+      </div>
+      <div class="members">
+        <div class="member">
+          <div class="member-photo"><img src="assets/img/equipo-oliver.webp" alt="Oliver Gibson" width="440" height="440" loading="lazy" decoding="async"></div>
+          <div class="member-card">
+            <div class="member-name">Oliver Gibson</div>
+            <div class="member-role">CEO &amp; Co-Founder</div>
+            <a class="chip" href="https://www.linkedin.com/in/oliver-gibson-665962144/" target="_blank" rel="noopener" aria-label="LinkedIn — Oliver Gibson"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3"></rect><rect x="6" y="10" width="2.6" height="8" fill="#FFFFFF"></rect><circle cx="7.3" cy="6.9" r="1.5" fill="#FFFFFF"></circle><path d="M11 10h2.5v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 2.8 1.3 2.8 3.4V18h-2.6v-4.3c0-1-.3-1.7-1.3-1.7s-1.5.8-1.5 1.8V18H11z" fill="#FFFFFF"></path></svg>LinkedIn</a>
+          </div>
+        </div>
+        <div class="member">
+          <div class="member-photo"><img src="assets/img/equipo-geraldine.webp" alt="Geraldine Gueron" width="440" height="440" loading="lazy" decoding="async"></div>
+          <div class="member-card">
+            <div class="member-name">Geraldine Gueron</div>
+            <div class="member-role">CSO &amp; Co-Founder</div>
+            <a class="chip" href="https://www.linkedin.com/in/geraldine-gueron-18123b20/" target="_blank" rel="noopener" aria-label="LinkedIn — Geraldine Gueron"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3"></rect><rect x="6" y="10" width="2.6" height="8" fill="#FFFFFF"></rect><circle cx="7.3" cy="6.9" r="1.5" fill="#FFFFFF"></circle><path d="M11 10h2.5v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 2.8 1.3 2.8 3.4V18h-2.6v-4.3c0-1-.3-1.7-1.3-1.7s-1.5.8-1.5 1.8V18H11z" fill="#FFFFFF"></path></svg>LinkedIn</a>
+          </div>
+        </div>
+        <div class="member">
+          <div class="member-photo"><img src="assets/img/equipo-juan.webp" alt="Juan Bizzotto" width="440" height="440" loading="lazy" decoding="async"></div>
+          <div class="member-card">
+            <div class="member-name">Juan Bizzotto</div>
+            <div class="member-role">CTO &amp; Co-Founder</div>
+            <a class="chip" href="https://www.linkedin.com/in/juan-bizzotto/" target="_blank" rel="noopener" aria-label="LinkedIn — Juan Bizzotto"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3"></rect><rect x="6" y="10" width="2.6" height="8" fill="#FFFFFF"></rect><circle cx="7.3" cy="6.9" r="1.5" fill="#FFFFFF"></circle><path d="M11 10h2.5v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 2.8 1.3 2.8 3.4V18h-2.6v-4.3c0-1-.3-1.7-1.3-1.7s-1.5.8-1.5 1.8V18H11z" fill="#FFFFFF"></path></svg>LinkedIn</a>
+          </div>
+        </div>
+        <div class="member">
+          <div class="member-photo"><img src="assets/img/equipo-daniel.webp" alt="Daniel Alonso" width="440" height="440" loading="lazy" decoding="async"></div>
+          <div class="member-card">
+            <div class="member-name">Daniel Alonso</div>
+            <div class="member-role">CMO &amp; Co-Founder</div>
+            <a class="chip" href="https://www.linkedin.com/in/daniel-f-alonso-b1b721300/" target="_blank" rel="noopener" aria-label="LinkedIn — Daniel Alonso"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3"></rect><rect x="6" y="10" width="2.6" height="8" fill="#FFFFFF"></rect><circle cx="7.3" cy="6.9" r="1.5" fill="#FFFFFF"></circle><path d="M11 10h2.5v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 2.8 1.3 2.8 3.4V18h-2.6v-4.3c0-1-.3-1.7-1.3-1.7s-1.5.8-1.5 1.8V18H11z" fill="#FFFFFF"></path></svg>LinkedIn</a>
+          </div>
+        </div>
+        <div class="member">
+          <div class="member-photo"><img src="assets/img/equipo-federico.webp" alt="Federico Cayol" width="440" height="440" loading="lazy" decoding="async"></div>
+          <div class="member-card">
+            <div class="member-name">Federico Cayol</div>
+            <div class="member-role">Oncólogo &amp; Co-Founder</div>
+            <a class="chip" href="https://www.linkedin.com/in/federico-cayol-98434613/" target="_blank" rel="noopener" aria-label="LinkedIn — Federico Cayol"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3"></rect><rect x="6" y="10" width="2.6" height="8" fill="#FFFFFF"></rect><circle cx="7.3" cy="6.9" r="1.5" fill="#FFFFFF"></circle><path d="M11 10h2.5v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 2.8 1.3 2.8 3.4V18h-2.6v-4.3c0-1-.3-1.7-1.3-1.7s-1.5.8-1.5 1.8V18H11z" fill="#FFFFFF"></path></svg>LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <p class="advisors">Advisors: <strong>Marcelo Martí</strong> (Bitgenia) · <strong>Daniel Nofal</strong> (Enzyme VC) · <strong>Máximo Juda</strong> (Genomma Lab)</p>
+    </div>
+  </section>
+  <!-- 9 · INVERSORES -->
+  <section class="investors" id="inversores">
+    <div class="wrap investors-grid">
+      <div class="investors-text">
+        <span class="tag tag--line">Inversores</span>
+        <h2 class="h2">Respaldados por quienes <span class="accent">comparten nuestra visión.</span></h2>
+      </div>
+      <div class="investor-card"><span class="name">GRIDX</span><span class="role">Inversor</span></div>
+    </div>
+  </section>
+  <!-- 10 · CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="net net-a" aria-hidden="true"></div>
+    <div class="net net-b" aria-hidden="true"></div>
+    <div class="wrap contact-grid">
+      <div class="contact-text">
+        <span class="tag">Contacto</span>
+        <h2>Hablemos</h2>
+        <p>¿Querés sumarte al programa de acceso temprano, invertir o colaborar? Escribinos y te respondemos a la brevedad.</p>
+        <div class="contact-links">
+          <a href="mailto:oliver@pregen.tech"><span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#227B83" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"></rect><polyline points="3 6.5 12 13 21 6.5"></polyline></svg></span>oliver@pregen.tech</a>
+          <a href="https://www.linkedin.com/company/pregenbio/" target="_blank" rel="noopener"><span><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#227B83"><rect x="2" y="2" width="20" height="20" rx="3"></rect><rect x="6" y="10" width="2.6" height="8" fill="#FFFFFF"></rect><circle cx="7.3" cy="6.9" r="1.5" fill="#FFFFFF"></circle><path d="M11 10h2.5v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 2.8 1.3 2.8 3.4V18h-2.6v-4.3c0-1-.3-1.7-1.3-1.7s-1.5.8-1.5 1.8V18H11z" fill="#FFFFFF"></path></svg></span>PreGen en LinkedIn</a>
+        </div>
+      </div>
+      <form class="form" action="contacto.php" method="post" novalidate>
+        <div class="form-row">
+          <div class="field"><label for="c-nombre">Nombre <span>*</span></label><input id="c-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required maxlength="120"></div>
+          <div class="field"><label for="c-email">Email <span>*</span></label><input id="c-email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required maxlength="160"></div>
+        </div>
+        <div class="field"><label for="c-rol">Soy</label><select id="c-rol" name="rol"><option>Médico/a (urología u oncología)</option><option>Laboratorio</option><option>Inversor/a</option><option>Paciente o familiar</option><option>Otro</option></select></div>
+        <div class="field"><label for="c-msj">Mensaje <span>*</span></label><textarea id="c-msj" name="mensaje" placeholder="Hola, me gustaría saber más sobre…" required maxlength="5000"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="c-web">No completar este campo</label><input id="c-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <input type="hidden" name="ts" value="">
+        <input type="hidden" name="lang" value="es">
+        <button class="btn btn--block" type="submit">Enviar mensaje</button>
+        <div class="form-status" role="status" aria-live="polite"></div>
+        <p class="form-note">Usamos tus datos solo para responder tu consulta.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site-footer" aria-label="Pie de página">
+  <img src="assets/img/particulas.webp" alt="" loading="lazy" decoding="async">
+  <div class="wrap">
+    <div class="footer-top">
+      <img src="assets/img/logo-blanco.png" alt="PreGen" width="156" height="38" loading="lazy">
+      <nav class="footer-nav"><a href="#que-hacemos">Qué hacemos</a><a href="#por-que">Por qué PreGen</a><a href="#producto">Producto</a><a href="#novedades">Novedades</a><a href="#equipo">Nosotros</a><a href="#contacto">Contacto</a></nav>
+    </div>
+    <div class="footer-bottom"><div>© 2026 PreGen S.A. · Buenos Aires, Argentina</div><div>La información de este sitio no reemplaza la consulta médica.</div></div>
   </div>
-
-  <!-- The Team -->
-  <div id="team" class="container-fluid py-5">
-    <div class="container-xxl py-4 text-center">
-      <h2 class="mb-4">The Team</h2>
-     <div class="team-panel">
-  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
-    <img src="5.jpeg" alt="Oliver Gibson" class="profile-pic">
-    <h3 class="member-name">Oliver Gibson</h3>
-    <span>Co-Founder & CEO</span>
-    <div class="linkedin-icon">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-    </div>
-  </a>
-
-  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
-    <img src="1.jpeg" alt="Geraldine Gueron" class="profile-pic">
-    <h3 class="member-name">Geraldine Gueron</h3>
-    <span>Co-Founder & CSO</span>
-    <div class="linkedin-icon">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-    </div>
-  </a>
-
-  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
-    <img src="2.jpg" alt="Federico Cayol" class="profile-pic">
-    <h3 class="member-name">Federico Cayol</h3>
-    <span>Co-Founder</span>
-    <div class="linkedin-icon">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-    </div>
-  </a>
-
-  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
-    <img src="3.jpeg" alt="Daniel Alonso" class="profile-pic">
-    <h3 class="member-name">Daniel Alonso</h3>
-    <span>Co-Founder</span>
-    <div class="linkedin-icon">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-    </div>
-  </a>
-
-  <a href="https://linkedin.com" target="_blank" class="member-card text-decoration-none">
-    <img src="4.webp" alt="Juan Bizzoto" class="profile-pic">
-    <h3 class="member-name">Juan Bizzoto</h3>
-    <span>Co-Founder & CTO</span>
-    <div class="linkedin-icon">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-    </div>
-  </a>
-</div>
-
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="container-fluid footer pt-5">
-    <div class="container py-3 text-center">
-      <img class="d-block mx-auto mb-3" src="logo_no_bckg.png" alt="PreGen Logo" style="height:60px;">
-      <p class="footer-item m-0">&copy; 2025 PreGen, All Rights Reserved.</p>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+</footer>
+<script src="assets/js/main.js" defer></script>
+</body>
 </html>

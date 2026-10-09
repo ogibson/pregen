@@ -1,0 +1,30 @@
+# PreGen — configuración del servidor (Hostinger / LiteSpeed)
+
+# Abrir index.html primero (y no el index.php de WordPress, si quedó alguno)
+DirectoryIndex index.html
+
+# Página de error para direcciones que ya no existen
+ErrorDocument 404 /404.html
+
+# Caché del navegador para imágenes, estilos y scripts
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Compresión
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml
+</IfModule>
+
+# HTTPS: en Hostinger conviene activarlo desde hPanel → Seguridad → SSL → "Forzar HTTPS".
+# Si no aparece esa opción, quitá el "#" de las 3 líneas siguientes.
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
