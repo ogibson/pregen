@@ -6,7 +6,6 @@ QUÉ HAY ACÁ
   novedades.html      Página de novedades (español)
   en/index.html       Inicio en inglés
   en/news.html        Página de novedades (inglés)
-  contacto.php        Envía por mail los mensajes del formulario
   404.html            Página para direcciones que no existen
   assets/css/         Estilos (styles.css)
   assets/js/          Menú móvil, pestañas y formulario (main.js)
@@ -28,15 +27,18 @@ CÓMO SUBIRLO (hPanel de Hostinger)
 
 
 FORMULARIO DE CONTACTO
+  - El formulario usa FormSubmit (formsubmit.co, gratis, sin registro).
+    Funciona en cualquier hosting estático (GitHub Pages, Netlify, etc.).
   - Los mensajes llegan a oliver@pregen.tech.
-  - Abrí contacto.php y revisá las dos líneas de arriba:
-        $TO   = quién recibe los mensajes
-        $FROM = remitente; tiene que ser una casilla de @pregen.tech
-  - Si web@pregen.tech no existe, creala (Hostinger → Emails) o cambiá
-    $FROM por una casilla que ya exista, por ejemplo oliver@pregen.tech.
-  - Mandá un mensaje de prueba desde el sitio. Si no llega (ni a spam),
-    lo más probable es que el mail del dominio esté en otro proveedor y
-    haya que sumar a Hostinger en el registro SPF. En ese caso avisame.
+  - ACTIVACIÓN (una sola vez): mandá un mensaje de prueba desde el sitio
+    publicado. FormSubmit envía un mail de confirmación a oliver@pregen.tech;
+    hacé clic en el link. Los mensajes enviados antes de confirmar se
+    entregan después de activar.
+  - Para cambiar el destinatario: en index.html y en/index.html buscá
+    "formsubmit.co/" (aparece 2 veces por archivo) y reemplazá el email.
+    Hay que volver a activar.
+  - Para ocultar el email en el código: al activar, FormSubmit te manda un
+    código aleatorio; reemplazá el email por ese código en esas mismas URLs.
 
 
 CÓMO EDITAR

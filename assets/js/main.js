@@ -71,8 +71,6 @@
   if (form) {
     var status = form.querySelector('.form-status');
     var btn = form.querySelector('button[type="submit"]');
-    var ts = form.querySelector('input[name="ts"]');
-    if (ts) ts.value = String(Date.now());
 
     function show(kind, msg) {
       status.className = 'form-status ' + kind;
@@ -91,17 +89,18 @@
       btn.textContent = T.sending;
       status.className = 'form-status';
       status.textContent = '';
-      fetch(form.action, {
+      var payload = {};
+      new FormData(form).forEach(function (v, k) { payload[k] = v; });
+      fetch(form.getAttribute('data-ajax') || form.action, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'X-Requested-With': 'fetch', 'Accept': 'application/json' }
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
       })
         .then(function (r) { return r.json().catch(function () { return { ok: false, code: 'error' }; }); })
         .then(function (data) {
-          if (data && data.ok) {
+          if (data && (data.ok === true || data.success === true || data.success === 'true')) {
             show('ok', T.ok);
             form.reset();
-            if (ts) ts.value = String(Date.now());
           } else {
             show('err', data && data.code === 'invalid' ? T.invalid : T.error);
           }
