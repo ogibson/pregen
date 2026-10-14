@@ -450,17 +450,28 @@ section { position: relative; overflow: hidden; scroll-margin-top: 72px; }
 .advisors strong { color: var(--ink); font-weight: 600; }
 
 /* ---------- 9 · Inversores ---------- */
-.investors { padding: 96px 0 104px; background: #FFFFFF; }
-.investors .wrap::before { content: ""; position: absolute; left: var(--pad); right: var(--pad); top: -96px; height: 1px; background: var(--line); }
-.investors-inner { display: flex; flex-direction: column; align-items: center; gap: 36px; text-align: center; }
-.investors-title { font-size: clamp(22px, 2vw, 28px); line-height: 1.2; font-weight: 700; letter-spacing: -0.015em; color: var(--ink); }
-.investor-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 32px 56px; }
-.investor-logo { display: block; border-radius: 4px; transition: opacity .2s ease, transform .2s ease; }
-.investor-logo:hover { opacity: .85; transform: translateY(-2px); }
-.investor-logo img { height: 96px; width: auto; }
+.investors { padding: 100px 0 110px; background: var(--light); }
+.investors .net-a { right: -380px; top: -460px; width: 900px; opacity: .28; }
+.investors .net-b { left: -420px; bottom: -560px; width: 860px; opacity: .16; }
+.investor-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 56px; }
+.investor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  max-width: 100%;
+  height: 190px;
+  background: #FFFFFF;
+  border-radius: 28px 28px 80px 28px;
+  box-shadow: 0 16px 40px rgba(16, 39, 42, .08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.investor-logo:hover { transform: translateY(-3px); box-shadow: 0 20px 46px rgba(16, 39, 42, .13); }
+.investor-logo img { width: 240px; max-width: 75%; height: auto; }
 
 /* ---------- 10 · Contacto ---------- */
 .contact { padding: 110px 0; background: var(--light); }
+.investors + .contact .contact-grid::before { content: ""; position: absolute; left: var(--pad); right: var(--pad); top: -110px; height: 1px; background: var(--line); }
 .contact .net-a { right: -480px; bottom: -560px; width: 960px; opacity: .28; }
 .contact .net-b { left: -560px; top: -560px; width: 860px; opacity: .18; }
 .contact-grid { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 600px); justify-content: space-between; gap: 48px; align-items: start; }
@@ -619,10 +630,11 @@ section { position: relative; overflow: hidden; scroll-margin-top: 72px; }
   .feat { min-height: 440px; }
 
   .investors { padding: 88px 0; }
-  .investors .wrap::before { top: -88px; }
-  .investor-logo img { height: 72px; }
+  .investor-logos { margin-top: 40px; }
+  .investor-logo { height: 170px; }
 
   .contact { padding: 88px 0; }
+  .investors + .contact .contact-grid::before { top: -88px; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-text { padding-top: 0; }
 
