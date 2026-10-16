@@ -66,6 +66,18 @@
     });
   });
 
+  /* Productos: en pantallas chicas, al elegir otro producto se muestra la card */
+  var narrow = window.matchMedia('(max-width: 980px)');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('.product-tab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (!panel || !narrow.matches) return;
+      var hh = header ? header.offsetHeight : 0;
+      if (panel.getBoundingClientRect().top < hh) panel.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
   /* Formulario de contacto */
   var form = document.querySelector('form.form');
   if (form) {

@@ -163,60 +163,58 @@
       </div>
     </div>
   </section>
-  <!-- 5 · PRODUCTO -->
+  <!-- 5 · PRODUCTOS (próstata + plataforma) -->
   <section class="product" id="product">
     <div class="net net-a" aria-hidden="true"></div>
     <div class="net net-b" aria-hidden="true"></div>
     <div class="wrap">
       <div class="product-card">
         <div class="product-media"><img src="../assets/img/producto-pcr.webp" alt="Pipetting samples for RT-qPCR" width="1200" height="753" loading="lazy" decoding="async"></div>
-        <div class="product-body">
-          <span class="tag">Our product</span>
-          <h2 class="h2">PreGen Prostate</h2>
-          <p><strong>PreGen Prostate</strong> is a prognostic test that measures a <strong>10-gene signature</strong> by RT-qPCR on the diagnostic biopsy to estimate the tumor’s <strong>risk of progression</strong>.</p>
-          <span class="pill-mint">In clinical validation · Argentina</span>
-          <div class="stats"><div class="stat"><strong>1.4M+</strong><span>men are diagnosed with prostate cancer every year worldwide.</span></div><div class="stat"><strong>500,000</strong><span>prostate biopsies per year in Latin America.</span></div><div class="stat"><strong>USD 3,400+</strong><span>is the cost of a genomic test today, and results can take months.</span></div></div>
+        <div class="product-panels">
+          <div class="product-body" id="panel-prostate" role="tabpanel" aria-labelledby="tab-prostate">
+            <span class="tag">Our products</span>
+            <h2 class="h2">PreGen Prostate</h2>
+            <p>Determines <strong>prognosis</strong> from a <strong>10-gene signature</strong> measured by <span class="nowrap">RT-qPCR</span> on the same biopsy taken for diagnosis, to help decide between active surveillance and different treatments.</p>
+            <span class="pill-mint">In clinical validation</span>
+            <div class="stats"><div class="stat"><strong>1.4M+</strong><span>men are diagnosed with prostate cancer every year worldwide.</span></div><div class="stat"><strong>500,000</strong><span>prostate biopsies per year in Latin America.</span></div><div class="stat"><strong>USD 3,400+</strong><span>is the cost of a genomic test today, and results can take months.</span></div></div>
+          </div>
+          <div class="product-body" id="panel-lung" role="tabpanel" aria-labelledby="tab-lung" hidden>
+            <span class="tag">Our products</span>
+            <h2 class="h2">PreGen Lung</h2>
+            <p>Predicts <strong>response to immunotherapy</strong> from a <strong>6-gene signature</strong> measured by <span class="nowrap">RT-qPCR</span> on the same biopsy taken for diagnosis, to help decide between immunotherapy and other treatments.</p>
+            <span class="pill-mint">In analytical validation</span>
+            <div class="stats"><div class="stat"><strong>2.6M+</strong><span>people are diagnosed with lung cancer every year worldwide.</span></div><div class="stat"><strong>100,000+</strong><span>new lung cancer cases per year in Latin America.</span></div><div class="stat"><strong>15–25%</strong><span>of patients respond to immunotherapy.</span></div></div>
+          </div>
+          <div class="product-body" id="panel-melanoma" role="tabpanel" aria-labelledby="tab-melanoma" hidden>
+            <span class="tag">Our products</span>
+            <h2 class="h2">PreGen Melanoma</h2>
+            <p>Predicts <strong>response to immunotherapy</strong> from a <strong>gene signature</strong> measured by <span class="nowrap">RT-qPCR</span> on the same biopsy taken for diagnosis, to help decide between immunotherapy and other treatments.</p>
+            <span class="pill-mint">In algorithm development</span>
+            <div class="stats"><div class="stat"><strong>330,000+</strong><span>people are diagnosed with melanoma every year worldwide.</span></div><div class="stat"><strong>20,000+</strong><span>new melanoma cases per year in Latin America.</span></div><div class="stat"><strong>45%</strong><span>of patients with advanced melanoma do not respond to immunotherapy.</span></div></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- 6 · PLATAFORMA -->
-  <section class="platform" id="platform">
-    <img class="platform-bg" src="../assets/img/particulas.webp" alt="" width="1920" height="1440" loading="lazy" decoding="async">
-    <div class="platform-shade"></div>
-    <div class="wrap platform-grid">
-      <div class="platform-text">
-        <span class="tag tag--light">Platform</span>
-        <h2>One platform, multiple tumors</h2>
-        <p>The same <strong>AI</strong> platform is being applied to <strong>other tumors and biomarkers</strong>.</p>
-      </div>
-      <div class="pipeline">
-        <div class="pipe-labels" aria-hidden="true"><span>EXPLORATION</span><span>DEVELOPMENT</span><span>VALIDATION</span></div>
-          <div class="pipe">
-            <div class="pipe-top">
-              <div><div class="pipe-name">Prostate</div><div class="pipe-sub">Aggressiveness prognosis</div></div>
-              <div class="pipe-status s3">Clinical validation</div>
-            </div>
-            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></div>
-          </div>
-          <div class="pipe">
-            <div class="pipe-top">
-              <div><div class="pipe-name">Lung</div><div class="pipe-sub">Response to immunotherapy</div></div>
-              <div class="pipe-status s2">Computational development</div>
-            </div>
-            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></div>
-          </div>
-          <div class="pipe">
-            <div class="pipe-top">
-              <div><div class="pipe-name">Melanoma</div><div class="pipe-sub">Response to immunotherapy</div></div>
-              <div class="pipe-status s1">Exploratory</div>
-            </div>
-            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
-          </div>
+      <div class="product-head" id="platform"><p>The same AI platform, applied to <strong>other tumors and biomarkers</strong>.</p></div>
+      <div class="product-tabs" role="tablist" aria-label="Products">
+        <button class="product-tab" type="button" role="tab" id="tab-prostate" aria-selected="true" aria-controls="panel-prostate">
+          <span><span class="tab-name">Prostate</span><span class="tab-sub">Aggressiveness prognosis</span></span>
+          <span class="tab-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span>
+          <span class="tab-status">Retrospective clinical validation</span>
+        </button>
+        <button class="product-tab" type="button" role="tab" id="tab-lung" aria-selected="false" aria-controls="panel-lung" tabindex="-1">
+          <span><span class="tab-name">Lung</span><span class="tab-sub">Response to immunotherapy</span></span>
+          <span class="tab-bar" aria-hidden="true"><i class="on"></i><i class="cur"></i><i></i><i></i></span>
+          <span class="tab-status">Analytical validation</span>
+        </button>
+        <button class="product-tab" type="button" role="tab" id="tab-melanoma" aria-selected="false" aria-controls="panel-melanoma" tabindex="-1">
+          <span><span class="tab-name">Melanoma</span><span class="tab-sub">Response to immunotherapy</span></span>
+          <span class="tab-bar" aria-hidden="true"><i class="cur"></i><i></i><i></i><i></i></span>
+          <span class="tab-status">Algorithm development</span>
+        </button>
       </div>
     </div>
   </section>
-  <!-- 7 · NOVEDADES -->
+  <!-- 6 · NOVEDADES -->
   <section class="news" id="news">
     <div class="net" aria-hidden="true"></div>
     <div class="wrap">
@@ -277,7 +275,7 @@
       </div>
     </div>
   </section>
-  <!-- 8 · EQUIPO -->
+  <!-- 7 · EQUIPO -->
   <section class="team" id="team">
     <div class="net" aria-hidden="true"></div>
     <div class="wrap">
@@ -330,7 +328,7 @@
       <p class="advisors">Advisors: <strong>Marcelo Martí</strong> (Bitgenia) · <strong>Daniel Nofal</strong> (Enzyme VC) · <strong>Máximo Juda</strong> (Genomma Lab)</p>
     </div>
   </section>
-  <!-- 9 · INVERSORES -->
+  <!-- 8 · INVERSORES -->
   <section class="investors" id="investors">
     <div class="net net-a" aria-hidden="true"></div>
     <div class="net net-b" aria-hidden="true"></div>
@@ -344,7 +342,7 @@
       </div>
     </div>
   </section>
-  <!-- 10 · CONTACTO -->
+  <!-- 9 · CONTACTO -->
   <section class="contact" id="contact">
     <div class="net net-a" aria-hidden="true"></div>
     <div class="net net-b" aria-hidden="true"></div>

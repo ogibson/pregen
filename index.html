@@ -163,60 +163,58 @@
       </div>
     </div>
   </section>
-  <!-- 5 · PRODUCTO -->
+  <!-- 5 · PRODUCTOS (próstata + plataforma) -->
   <section class="product" id="producto">
     <div class="net net-a" aria-hidden="true"></div>
     <div class="net net-b" aria-hidden="true"></div>
     <div class="wrap">
       <div class="product-card">
         <div class="product-media"><img src="assets/img/producto-pcr.webp" alt="Pipeteo de muestras para RT-qPCR" width="1200" height="753" loading="lazy" decoding="async"></div>
-        <div class="product-body">
-          <span class="tag">Nuestro producto</span>
-          <h2 class="h2">PreGen Próstata</h2>
-          <p><strong>PreGen Próstata</strong> es un test de pronóstico que mide una <strong>firma de 10 genes</strong> por RT-qPCR sobre la biopsia diagnóstica para estimar el <strong>riesgo de progresión</strong> del tumor.</p>
-          <span class="pill-mint">En validación clínica · Argentina</span>
-          <div class="stats"><div class="stat"><strong>+1,4 millones</strong><span>de hombres reciben un diagnóstico de cáncer de próstata cada año en el mundo.</span></div><div class="stat"><strong>500.000</strong><span>biopsias de próstata por año en Latinoamérica.</span></div><div class="stat"><strong>USD 3.400+</strong><span>cuesta hoy un test genómico, y puede tardar meses.</span></div></div>
+        <div class="product-panels">
+          <div class="product-body" id="panel-prostata" role="tabpanel" aria-labelledby="tab-prostata">
+            <span class="tag">Nuestros productos</span>
+            <h2 class="h2">PreGen Próstata</h2>
+            <p>Determina el <strong>pronóstico</strong> a partir de una <strong>firma de 10 genes</strong> medida por <span class="nowrap">RT-qPCR</span> sobre la misma biopsia realizada para el diagnóstico, para ayudar a decidir entre vigilancia activa y distintos tratamientos.</p>
+            <span class="pill-mint">En validación clínica</span>
+            <div class="stats"><div class="stat"><strong>+1,4 millones</strong><span>de hombres reciben un diagnóstico de cáncer de próstata cada año en el mundo.</span></div><div class="stat"><strong>500.000</strong><span>biopsias de próstata por año en Latinoamérica.</span></div><div class="stat"><strong>USD 3.400+</strong><span>cuesta hoy un test genómico, y puede tardar meses.</span></div></div>
+          </div>
+          <div class="product-body" id="panel-pulmon" role="tabpanel" aria-labelledby="tab-pulmon" hidden>
+            <span class="tag">Nuestros productos</span>
+            <h2 class="h2">PreGen Pulmón</h2>
+            <p>Predice la <strong>respuesta a la inmunoterapia</strong> a partir de una <strong>firma de 6 genes</strong> medida por <span class="nowrap">RT-qPCR</span> sobre la misma biopsia realizada para el diagnóstico, para ayudar a decidir entre inmunoterapia y otros tratamientos.</p>
+            <span class="pill-mint">En validación analítica</span>
+            <div class="stats"><div class="stat"><strong>+2,6 millones</strong><span>de personas reciben un diagnóstico de cáncer de pulmón cada año en el mundo.</span></div><div class="stat"><strong>+100.000</strong><span>nuevos casos de cáncer de pulmón por año en Latinoamérica.</span></div><div class="stat"><strong>15–25%</strong><span>de los pacientes responde a la inmunoterapia.</span></div></div>
+          </div>
+          <div class="product-body" id="panel-melanoma" role="tabpanel" aria-labelledby="tab-melanoma" hidden>
+            <span class="tag">Nuestros productos</span>
+            <h2 class="h2">PreGen Melanoma</h2>
+            <p>Predice la <strong>respuesta a la inmunoterapia</strong> a partir de una <strong>firma génica</strong> medida por <span class="nowrap">RT-qPCR</span> sobre la misma biopsia realizada para el diagnóstico, para ayudar a decidir entre inmunoterapia y otros tratamientos.</p>
+            <span class="pill-mint">En desarrollo del algoritmo</span>
+            <div class="stats"><div class="stat"><strong>+330.000</strong><span>personas reciben un diagnóstico de melanoma cada año en el mundo.</span></div><div class="stat"><strong>+20.000</strong><span>nuevos casos de melanoma por año en Latinoamérica.</span></div><div class="stat"><strong>45%</strong><span>de los pacientes con melanoma avanzado no responde a la inmunoterapia.</span></div></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- 6 · PLATAFORMA -->
-  <section class="platform" id="plataforma">
-    <img class="platform-bg" src="assets/img/particulas.webp" alt="" width="1920" height="1440" loading="lazy" decoding="async">
-    <div class="platform-shade"></div>
-    <div class="wrap platform-grid">
-      <div class="platform-text">
-        <span class="tag tag--light">Plataforma</span>
-        <h2>Una plataforma, varios tumores</h2>
-        <p>La misma plataforma de <strong>IA</strong> se está aplicando a <strong>otros tumores y biomarcadores</strong>.</p>
-      </div>
-      <div class="pipeline">
-        <div class="pipe-labels" aria-hidden="true"><span>EXPLORACIÓN</span><span>DESARROLLO</span><span>VALIDACIÓN</span></div>
-          <div class="pipe">
-            <div class="pipe-top">
-              <div><div class="pipe-name">Próstata</div><div class="pipe-sub">Pronóstico de agresividad</div></div>
-              <div class="pipe-status s3">Validación clínica</div>
-            </div>
-            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></div>
-          </div>
-          <div class="pipe">
-            <div class="pipe-top">
-              <div><div class="pipe-name">Pulmón</div><div class="pipe-sub">Respuesta a inmunoterapia</div></div>
-              <div class="pipe-status s2">Desarrollo computacional</div>
-            </div>
-            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></div>
-          </div>
-          <div class="pipe">
-            <div class="pipe-top">
-              <div><div class="pipe-name">Melanoma</div><div class="pipe-sub">Respuesta a inmunoterapia</div></div>
-              <div class="pipe-status s1">Exploratorio</div>
-            </div>
-            <div class="pipe-bar" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
-          </div>
+      <div class="product-head" id="plataforma"><p>La misma plataforma de IA, aplicada a <strong>otros tumores y biomarcadores</strong>.</p></div>
+      <div class="product-tabs" role="tablist" aria-label="Productos">
+        <button class="product-tab" type="button" role="tab" id="tab-prostata" aria-selected="true" aria-controls="panel-prostata">
+          <span><span class="tab-name">Próstata</span><span class="tab-sub">Pronóstico de agresividad</span></span>
+          <span class="tab-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span>
+          <span class="tab-status">Validación clínica retrospectiva</span>
+        </button>
+        <button class="product-tab" type="button" role="tab" id="tab-pulmon" aria-selected="false" aria-controls="panel-pulmon" tabindex="-1">
+          <span><span class="tab-name">Pulmón</span><span class="tab-sub">Respuesta a inmunoterapia</span></span>
+          <span class="tab-bar" aria-hidden="true"><i class="on"></i><i class="cur"></i><i></i><i></i></span>
+          <span class="tab-status">Validación analítica</span>
+        </button>
+        <button class="product-tab" type="button" role="tab" id="tab-melanoma" aria-selected="false" aria-controls="panel-melanoma" tabindex="-1">
+          <span><span class="tab-name">Melanoma</span><span class="tab-sub">Respuesta a inmunoterapia</span></span>
+          <span class="tab-bar" aria-hidden="true"><i class="cur"></i><i></i><i></i><i></i></span>
+          <span class="tab-status">Desarrollo del algoritmo</span>
+        </button>
       </div>
     </div>
   </section>
-  <!-- 7 · NOVEDADES -->
+  <!-- 6 · NOVEDADES -->
   <section class="news" id="novedades">
     <div class="net" aria-hidden="true"></div>
     <div class="wrap">
@@ -277,7 +275,7 @@
       </div>
     </div>
   </section>
-  <!-- 8 · EQUIPO -->
+  <!-- 7 · EQUIPO -->
   <section class="team" id="equipo">
     <div class="net" aria-hidden="true"></div>
     <div class="wrap">
@@ -330,7 +328,7 @@
       <p class="advisors">Advisors: <strong>Marcelo Martí</strong> (Bitgenia) · <strong>Daniel Nofal</strong> (Enzyme VC) · <strong>Máximo Juda</strong> (Genomma Lab)</p>
     </div>
   </section>
-  <!-- 9 · INVERSORES -->
+  <!-- 8 · INVERSORES -->
   <section class="investors" id="inversores">
     <div class="net net-a" aria-hidden="true"></div>
     <div class="net net-b" aria-hidden="true"></div>
@@ -344,7 +342,7 @@
       </div>
     </div>
   </section>
-  <!-- 10 · CONTACTO -->
+  <!-- 9 · CONTACTO -->
   <section class="contact" id="contacto">
     <div class="net net-a" aria-hidden="true"></div>
     <div class="net net-b" aria-hidden="true"></div>
